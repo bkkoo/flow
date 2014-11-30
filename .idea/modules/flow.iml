@@ -15,6 +15,16 @@
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/resource_managed/main" type="java-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../src/test/resources" type="java-test-resource" />
       <sourceFolder url="file://$MODULE_DIR$/../../target/scala-2.11/resource_managed/test" type="java-test-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/../../base/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../curaccumpv/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../dbsync/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/../../sys/src" isTestSource="false" />
+      <excludeFolder url="file://$MODULE_DIR$/../../base/project/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../base/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../curaccumpv/project/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../curaccumpv/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../dbsync/target" />
+      <excludeFolder url="file://$MODULE_DIR$/../../sys/target" />
       <excludeFolder url="file://$MODULE_DIR$/../../target" />
     </content>
     <orderEntry type="inheritedJdk" />

@@ -3,11 +3,11 @@ package net.shantitree.flow.base.partner.model
 import java.util.Date
 
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE._
+import net.shantitree.flow.base.partner.app.PartnerIdGen
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
 import net.shantitree.flow.sys.lib.model.conversion.{NoneNotDataVal, OptionNotDataVal}
 import net.shantitree.flow.sys.lib.model.{Model, ModelDef}
 import net.shantitree.flow.sys.lib.orient.model.IndexUtil
-import net.shantitree.flow.sys.IdGenerator
 import org.joda.time.DateTime
 
 
@@ -38,7 +38,7 @@ object Partner extends ModelDef[Partner] {
 
 case class Partner (
   rid: Option[AnyRef]=None,
-  code: String = IdGenerator.genPartnerCode(),
+  code: String = PartnerIdGen.genId(),
   member_code:Option[String]=None,
   supplier_code: Option[String]=None,
   employee_code: Option[String]=None,
