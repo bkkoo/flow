@@ -1,6 +1,6 @@
 package net.shantitree.flow.gaia.sync.job
 
-import net.shantitree.flow.base.bznet.app.PeriodicAccumPVDML
+import net.shantitree.flow.base.bznet.sys.PeriodicAccumPVDML
 import net.shantitree.flow.base.bznet.model.{AccumPVField, AccumPV}
 import net.shantitree.flow.gaia.qry.base.PeriodicAccumulatedPVBase
 import net.shantitree.flow.gaia.qry.view.PeriodicAccumulatedPVView

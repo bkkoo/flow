@@ -3,7 +3,7 @@ package net.shantitree.flow.base.saleorder.model
 import java.util.Date
 
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE._
-import net.shantitree.flow.sys.constant.MiscConst
+import net.shantitree.flow.base.biz.constant.MiscConst
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
 import net.shantitree.flow.sys.lib.model.conversion.DataValConverter
 import net.shantitree.flow.sys.lib.model.{Model, ModelDef}

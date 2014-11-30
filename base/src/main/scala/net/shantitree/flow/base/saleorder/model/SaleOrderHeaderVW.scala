@@ -4,7 +4,7 @@ import java.util.Date
 
 import com.tinkerpop.blueprints.Vertex
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
-import net.shantitree.flow.base.saleorder.app.{SaleOrderBL, SaleOrderDML}
+import net.shantitree.flow.base.saleorder.sys.{SaleOrderBL, SaleOrderDML}
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
 import net.shantitree.flow.sys.lib.model.{VWrap, TVertexWrapper}
 

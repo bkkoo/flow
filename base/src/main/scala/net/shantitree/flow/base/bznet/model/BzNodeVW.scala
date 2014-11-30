@@ -4,7 +4,7 @@ import java.util.Date
 
 import com.tinkerpop.blueprints.Vertex
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
-import net.shantitree.flow.base.bznet.app.BzNetBL
+import net.shantitree.flow.base.bznet.sys.BzNetBL
 import net.shantitree.flow.base.bznet.constant.MemberPositionConst
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
 import net.shantitree.flow.sys.lib.model.{VWrap, TVertexWrapper}

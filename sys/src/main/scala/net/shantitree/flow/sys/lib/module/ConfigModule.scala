@@ -3,7 +3,6 @@ package net.shantitree.flow.sys.lib.module
 import com.google.inject.{AbstractModule, Provider}
 import com.typesafe.config.Config
 import net.codingwell.scalaguice.ScalaModule
-import net.shantitree.flow.sys.lib.module.GetConfig
 
 
 object ConfigModule {

@@ -3,7 +3,7 @@ package net.shantitree.flow.curaccumpv.app.msg
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.curaccumpv.model.CurAccumPVLogVW
 import net.shantitree.flow.base.saleorder.model.SaleOrderHeaderVW
-import net.shantitree.flow.sys.PV
+import net.shantitree.flow.sys.lib.biz.PV
 
 case class NewSales(codes: Iterable[String])
 case class ReGenerateAll(comPeriod: Option[Int])

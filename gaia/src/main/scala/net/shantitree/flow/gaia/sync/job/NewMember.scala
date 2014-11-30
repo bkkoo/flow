@@ -1,6 +1,6 @@
 package net.shantitree.flow.gaia.sync.job
 
-import net.shantitree.flow.base.bznet.app.MemberDML
+import net.shantitree.flow.base.bznet.sys.MemberDML
 import net.shantitree.flow.base.bznet.constant.MemberPositionConst
 import net.shantitree.flow.base.partner.sys.PartnerIdGen
 import net.shantitree.flow.base.partner.model.{PartnerField, Partner}

@@ -1,7 +1,7 @@
 package net.shantitree.flow.gaia.sync.job
 
-import net.shantitree.flow.sys.constant.MiscConst
-import net.shantitree.flow.base.saleorder.app.SaleOrderDML
+import net.shantitree.flow.base.biz.constant.MiscConst
+import net.shantitree.flow.base.saleorder.sys.SaleOrderDML
 import net.shantitree.flow.base.saleorder.model.{SaleOrder, SaleOrderItem, SaleOrderHeaderField, SaleOrderHeader}
 import net.shantitree.flow.gaia.qry.view.{SaleOrderItemView, SaleOrderHeaderView}
 import net.shantitree.flow.gaia.qry.base.{SaleOrderItemBase, SaleOrderHeaderBase}

@@ -2,7 +2,7 @@ package net.shantitree.flow.curaccumpv.model
 
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE._
 import com.tinkerpop.blueprints.Vertex
-import net.shantitree.flow.sys.PV
+import net.shantitree.flow.sys.lib.biz.PV
 import net.shantitree.flow.sys.lib.model.{VWrap, Model, ModelDef, TVertexWrapper}
 import net.shantitree.flow.sys.lib.orient.model.IndexUtil
 

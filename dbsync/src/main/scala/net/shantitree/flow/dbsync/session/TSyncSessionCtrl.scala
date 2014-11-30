@@ -1,10 +1,10 @@
 package net.shantitree.flow.dbsync.session
 
 import akka.actor.Actor
+import net.shantitree.flow.sys.lib.DataChangeEventBus
 import net.shantitree.flow.sys.lib.guice.Gak
 import net.shantitree.flow.dbsync.job.SyncJobConfig
 import net.shantitree.flow.dbsync.msg.job._
-import net.shantitree.flow.sys.DataChangeEventBus
 import org.joda.time.{Duration, DateTime}
 
 trait TSyncSessionCtrl { this: Actor =>

@@ -2,11 +2,11 @@ package net.shantitree.flow.dbsync.model
 
 import java.util.Date
 
-import com.github.nscala_time.time.Imports._
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE._
 import net.shantitree.flow.sys.lib.model.{Model, ModelDef}
 import net.shantitree.flow.sys.lib.orient.model.IndexUtil
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
+import org.joda.time.DateTime
 
 object SyncLog extends ModelDef[SyncLog] {
 

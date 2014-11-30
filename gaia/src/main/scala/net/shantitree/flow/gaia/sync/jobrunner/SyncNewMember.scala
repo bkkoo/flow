@@ -1,6 +1,6 @@
 package net.shantitree.flow.gaia.sync.jobrunner
 
-import net.shantitree.flow.base.bznet.app.BzNetDML
+import net.shantitree.flow.base.bznet.sys.BzNetDML
 import net.shantitree.flow.gaia.sync.job.NewMember
 import net.shantitree.flow.dbsync.job.JobRunner
 import net.shantitree.flow.dbsync.model.SyncLog

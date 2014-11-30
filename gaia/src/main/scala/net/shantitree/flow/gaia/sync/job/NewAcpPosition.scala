@@ -1,7 +1,7 @@
 package net.shantitree.flow.gaia.sync.job
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
-import net.shantitree.flow.base.bznet.app.AcpPositionDML
+import net.shantitree.flow.base.bznet.sys.AcpPositionDML
 import net.shantitree.flow.base.bznet.constant.{MemberDataJournalTypeConst, MemberPositionConst}
 import net.shantitree.flow.base.bznet.model.{AcpPositionField, AcpPosition}
 import net.shantitree.flow.gaia.qry.base.AcpPositionBase

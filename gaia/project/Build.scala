@@ -6,5 +6,6 @@ object FlowGaia extends Build {
   lazy val flowSlick = ProjectRef(file("../slick"), "flow-slick")
   lazy val flowDbSync = ProjectRef(file("../dbsync"), "flow-dbsync")
   lazy val flowBase = ProjectRef(file("../base"), "flow-base")
-  lazy val flowGaia = Project(id = "flow-gaia", base = file(".")) dependsOn(flowSys, flowSlick, flowDbSync, flowBase)
+  lazy val gaiaModel = ProjectRef(file("../gaia-model"), "gaia-model")
+  lazy val flowGaia = Project(id = "flow-gaia", base = file(".")) dependsOn(flowSys, flowSlick, flowDbSync, flowBase, gaiaModel)
 }

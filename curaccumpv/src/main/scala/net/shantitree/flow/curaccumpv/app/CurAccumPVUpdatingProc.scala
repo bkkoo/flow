@@ -2,10 +2,10 @@ package net.shantitree.flow.curaccumpv.app
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.bznet.model.BzNodeVW
-import net.shantitree.flow.sys.PV
-import net.shantitree.flow.sys.constant.EdgeLabelConst
+import net.shantitree.flow.sys.lib.biz.PV
+import net.shantitree.flow.base.biz.constant.EdgeLabelConst
 import net.shantitree.flow.curaccumpv.model.{CurAccumPVLog, CurAccumPVLogVW, CurAccumPVLogStatus}
-import net.shantitree.flow.base.saleorder.app.SaleOrderBL
+import net.shantitree.flow.base.saleorder.sys.SaleOrderBL
 import net.shantitree.flow.base.saleorder.model.SaleOrderHeaderVW
 import net.shantitree.flow.sys.lib.orient.graph.TGraphSession
 import net.shantitree.flow.sys.graph.GraphSession

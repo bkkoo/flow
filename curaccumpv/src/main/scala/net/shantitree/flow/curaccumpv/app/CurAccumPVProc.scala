@@ -3,9 +3,9 @@ package net.shantitree.flow.curaccumpv.app
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.curaccumpv.model.CurAccumPVLogVW
-import net.shantitree.flow.base.saleorder.app.SaleOrderBL
+import net.shantitree.flow.base.saleorder.sys.SaleOrderBL
 import net.shantitree.flow.base.saleorder.model.SaleOrderHeaderVW
-import net.shantitree.flow.sys.PV
+import net.shantitree.flow.sys.lib.biz.PV
 import net.shantitree.flow.sys.lib.orient.oql.operator.Between
 import BzNodeExt._
 

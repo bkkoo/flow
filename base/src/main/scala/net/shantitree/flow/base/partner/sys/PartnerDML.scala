@@ -1,8 +1,8 @@
 package net.shantitree.flow.base.partner.sys
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
-import net.shantitree.flow.biz.lib.DML
 import net.shantitree.flow.base.partner.model.{Partner, PartnerField, PartnerVW}
+import net.shantitree.flow.sys.lib.DML
 import net.shantitree.flow.sys.lib.orient.graph.GraphHelper._
 
 object PartnerDML extends DML[Partner] {
