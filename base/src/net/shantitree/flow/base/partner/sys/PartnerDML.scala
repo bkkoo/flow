@@ -1,4 +1,4 @@
-package net.shantitree.flow.base.partner.app
+package net.shantitree.flow.base.partner.sys
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.biz.lib.DML

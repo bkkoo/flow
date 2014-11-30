@@ -4,7 +4,7 @@ import com.tinkerpop.blueprints.{Direction, Vertex}
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.biz.lib.PV
 import net.shantitree.flow.sys.constant.EdgeLabelConst
-import net.shantitree.flow.base.partner.app.PartnerDML
+import net.shantitree.flow.base.partner.sys.PartnerDML
 import net.shantitree.flow.base.partner.model.PartnerVW
 import net.shantitree.flow.base.saleorder.model.{SaleOrderItemField, SaleOrderHeaderField, SaleOrderHeaderVW}
 import java.lang.{Iterable => JIterable}

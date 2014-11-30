@@ -1,4 +1,4 @@
-package net.shantitree.flow.base.partner.app
+package net.shantitree.flow.base.partner.sys
 
 import org.joda.time.DateTime
 

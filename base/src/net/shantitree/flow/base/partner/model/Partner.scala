@@ -3,7 +3,7 @@ package net.shantitree.flow.base.partner.model
 import java.util.Date
 
 import com.orientechnologies.orient.core.metadata.schema.OClass.INDEX_TYPE._
-import net.shantitree.flow.base.partner.app.PartnerIdGen
+import net.shantitree.flow.base.partner.sys.PartnerIdGen
 import net.shantitree.flow.sys.lib.lang.DateTimeHelper._
 import net.shantitree.flow.sys.lib.model.conversion.{NoneNotDataVal, OptionNotDataVal}
 import net.shantitree.flow.sys.lib.model.{Model, ModelDef}

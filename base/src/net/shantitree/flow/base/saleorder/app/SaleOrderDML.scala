@@ -8,7 +8,7 @@ import net.shantitree.flow.base.bznet.app.{SeedNode, BzNetDML}
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.biz.lib.{PV, TDML}
 import net.shantitree.flow.sys.constant.EdgeLabelConst
-import net.shantitree.flow.base.partner.app.{UnknownPartner, PartnerDML}
+import net.shantitree.flow.base.partner.sys.{UnknownPartner, PartnerDML}
 import net.shantitree.flow.base.partner.model.PartnerVW
 import net.shantitree.flow.base.saleorder.model._
 import net.shantitree.flow.sys.lib.orient.graph.GraphHelper._
