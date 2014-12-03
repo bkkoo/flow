@@ -1,11 +1,16 @@
 package net.shantitree.flow.dbsync.job
 
-import com.typesafe.config.Config
+import com.typesafe.config.{ConfigFactory, Config}
 import org.joda.time.DateTime
 
 import scala.concurrent.duration._
 
-case class SyncJobConfig(runnerName: String, config: Config) {
+object SyncJobConfig {
+  lazy val config = ConfigFactory.load().getConfig("sync")
+}
+
+case class SyncJobConfig(runnerName: String) {
+  import SyncJobConfig.config
 
   lazy val initialDate:DateTime = new DateTime(config.getString("initial_date"))
   lazy val defaultRepeatDelay:FiniteDuration = {

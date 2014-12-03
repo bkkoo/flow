@@ -7,7 +7,6 @@ import com.tinkerpop.blueprints.Vertex
 import net.shantitree.flow.sys.lib.{TSysLogVW, TSysLogField}
 import net.shantitree.flow.sys.lib.model.{Model, ModelDef, TVertexWrapper, VWrap}
 import net.shantitree.flow.sys.lib.orient.model.IndexUtil
-import net.shantitree.flow.lib.TSysLogVW
 import org.joda.time.DateTime
 
 object CurAccumPVLog extends ModelDef[CurAccumPVLog] {

@@ -1,4 +1,8 @@
-name := """flow-sys"""
+name := """sys"""
+
+artifactName := {(sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+    "net.shantitree.flow." + artifact.name + "-" + module.revision + "_" + sv.binary  +"." + artifact.extension
+}
 
 version := "0.5"
 
@@ -9,18 +13,28 @@ resolvers ++= Seq(
   "OSS Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
 )
 
+lazy val sys = project in file(".")
+
+lazy val orientId = "com.orientechnologies"
+
+lazy val orientVer = "2.0-M3"
+
+lazy val akkaId = "com.typesafe.akka"
+
+lazy val akkaVer = "2.3.7"
+
+
 libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-nop" % "1.6.4"
   ,"org.scalatest" %% "scalatest" % "2.1.6" % "test"
-  ,"com.typesafe.akka" % "akka-actor_2.11" % "2.3.3"
-  ,"com.typesafe.akka" % "akka-agent_2.11" % "2.3.3"
+  ,"org.scala-lang" % "scala-reflect" % "2.11.1"
+  ,akkaId % "akka-actor_2.11" % akkaVer
   ,"com.google.inject" % "guice" % "4.0-beta5"
   ,"net.codingwell" %% "scala-guice" % "4.0.0-beta5"
-  ,"org.scala-lang" % "scala-reflect" % "2.11.1"
-  ,"com.orientechnologies" % "orient-commons" % "2.0-M1"
-  ,"com.orientechnologies" % "orientdb-client" % "2.0-M3"
-  ,"com.orientechnologies" % "orientdb-core" % "2.0-M3"
-  ,"com.orientechnologies" % "orientdb-graphdb" % "2.0-M3"
+  ,orientId % "orient-commons" % "2.0-M1"
+  ,orientId % "orientdb-client" % orientVer
+  ,orientId % "orientdb-core" % orientVer
+  ,orientId % "orientdb-graphdb" % orientVer
   ,"joda-time" % "joda-time" % "2.5"
   ,"org.joda" % "joda-convert" % "1.7"
 )
@@ -31,5 +45,7 @@ fork := true
 javaOptions += "-Xmx2G"
 
 parallelExecution := true
+
+
 
 

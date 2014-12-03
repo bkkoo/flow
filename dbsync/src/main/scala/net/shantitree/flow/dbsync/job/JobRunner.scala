@@ -1,10 +1,12 @@
 package net.shantitree.flow.dbsync.job
 
-import akka.actor.{Actor, ActorRef}
+import akka.actor.{ActorSelection, Actor, ActorRef}
 import com.google.inject.Inject
 import com.google.inject.name.Named
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import com.typesafe.config.Config
+import net.shantitree.flow.dbsync.AppController
+import net.shantitree.flow.sys.GraphSession
 import net.shantitree.flow.sys.lib.model.TModel
 import net.shantitree.flow.slick.qry.BaseQry
 import net.shantitree.flow.dbsync.model.SyncLog.SType
@@ -13,8 +15,8 @@ import net.shantitree.flow.dbsync.model.{SyncLogUtil, SyncLog}
 import net.shantitree.flow.dbsync.msg.job._
 import net.shantitree.flow.dbsync.msg.result.{NoneResult, TSyncResult}
 import net.shantitree.flow.dbsync.puller.TPuller
-import net.shantitree.flow.dbsync.session.{DeferredUntilAnotherFinished, JobRunnerRef, SyncSession}
-import net.shantitree.flow.sys.graph.GraphSession
+import net.shantitree.flow.dbsync.session._
+import net.shantitree.flow.sys.lib.orient.graph.TGraphSession
 import org.joda.time.DateTime
 import scala.concurrent.duration.FiniteDuration
 import SyncLogUtil._
@@ -34,23 +36,12 @@ abstract class JobRunner[Q <: BaseQry, M <: TModel](val job: Job[Q, M])
 
   private var _syncMode: String = null
   private var _syncSession:SyncSession = null
-  private var _config: SyncJobConfig = _
-  private var _dbSessionExec: ActorRef = _
-  private var _graphSessionExec: ActorRef = _
-  lazy val config = _config
-  lazy val dbSessionExec = _dbSessionExec
-  lazy val graphSessionExec = _graphSessionExec
+  lazy val config = SyncJobConfig(runnerRef.name)
+  lazy val pullSession:ActorSelection = actorSelection(s"../../${PullSession.actorName}")
+  lazy val postSession:ActorSelection = actorSelection(s"../../${PostSession.actorName}")
   lazy val syncSession = _syncSession
   lazy val syncMode = _syncMode
 
-  @Inject()
-  def inject(@Named("DbSessionExec")dbSessionExec: ActorRef, @Named("GraphSessionExec")graphSessionExec:ActorRef, @Named("SyncJobConfig")syncJobConfig: Config) {
-    this._dbSessionExec = dbSessionExec
-    this._graphSessionExec = graphSessionExec
-    this._config = SyncJobConfig(runnerRef.name, syncJobConfig)
-  }
-
-  
   def getPuller(slog: SyncLog): TPuller[Q]
   def periodical:Receive
   def bulk:Receive
@@ -77,9 +68,9 @@ abstract class JobRunner[Q <: BaseQry, M <: TModel](val job: Job[Q, M])
       self ! BeginSync(slog)
   }
 
-  def getJobRepeatDelay:FiniteDuration = _config.repeatDelay
+  def getJobRepeatDelay:FiniteDuration = config.repeatDelay
 
-  def pull(slog: SyncLog):Unit = { dbSessionExec ! PullRequest(getPuller(slog), slog) }
+  def pull(slog: SyncLog):Unit = { pullSession ! PullRequest(getPuller(slog), slog) }
 
   def pullNext(): Boolean = {
     val priorLog = getSyncLogRecord().get
@@ -102,7 +93,7 @@ abstract class JobRunner[Q <: BaseQry, M <: TModel](val job: Job[Q, M])
           jobFail(e, slog)
       }
       val updater = job.createUpdater(models)
-      graphSessionExec ! RunUpdateInGraphSession(runnerRef, updater, slog)
+      postSession ! PostRequest(runnerRef, updater, slog)
       true
     } else {
       if (_syncMode == SType.Periodical) {
@@ -124,11 +115,12 @@ abstract class JobRunner[Q <: BaseQry, M <: TModel](val job: Job[Q, M])
   }
 
   def execInGraphSession(slog:SyncLog)(fn:OrientGraph=>Any): Unit = {
-    graphSessionExec ! ExecInGraphSession(runnerRef, slog)(fn)
+    postSession ! ExecInGraphSession(runnerRef, slog)(fn)
   }
 
   def jobFail(e: Throwable, slog: SyncLog): Nothing = {
     system.log.error(e, s"Job Fail: \r\n $slog")
+    /*todo: Change direct calling to graph session in to parameter receive from else where or just factor out the logging system */
     GraphSession.tx { implicit g => SyncLogUtil.recordLogFailure(slog, e) }
     throw e
   }

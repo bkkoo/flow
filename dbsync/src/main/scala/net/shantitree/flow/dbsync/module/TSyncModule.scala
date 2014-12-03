@@ -1,34 +1,22 @@
 package net.shantitree.flow.dbsync.module
 
-import akka.actor.{Actor, ActorRef}
-import com.google.inject._
-import com.typesafe.config.Config
-import name.Named
+import akka.actor.Actor
 import net.codingwell.scalaguice.ScalaModule
-import net.shantitree.flow.dbsync.job.SyncJobConfig
-import net.shantitree.flow.dbsync.session.{GraphSessionExec, DbSessionExec}
+import net.shantitree.flow.dbsync.AppController
+import net.shantitree.flow.dbsync.session.{SyncSessionController, PostSession, PullSession}
+import net.shantitree.flow.slick.module.TSqlDbModule
 
-trait TSyncModule { this: ScalaModule =>
+trait TSyncModule extends ScalaModule with TSqlDbModule {
 
-  val syncJobConfigPath: String
+  val sqlDbConfigPath = "sync.db"
 
   def syncModuleConfigure(): Unit = {
 
-    bind[Actor].annotatedWithName("DbSessionExec").to[DbSessionExec]
-    bind[ActorRef].annotatedWithName("DbSessionExec").toProvider[DbSessionExecProvider].asEagerSingleton()
+    bind[Actor].annotatedWithName(PullSession.actorName).to[PullSession]
+    bind[Actor].annotatedWithName(PostSession.actorName).to[PostSession]
+    bind[Actor].annotatedWithName(SyncSessionController.actorName).to[SyncSessionController]
+    bind[Actor].annotatedWithName(AppController.actorName).to[AppController]
 
-    bind[Actor].annotatedWithName("GraphSessionExec").to[GraphSessionExec]
-    bind[ActorRef].annotatedWithName("GraphSessionExec").toProvider[GraphSessionExecProvider].asEagerSingleton()
-
-  }
-
-  @Provides @Named("SyncJobConfig")
-  def getSyncJobConfig(@Inject() config: Config):Config = {
-    try {
-      config.getConfig(syncJobConfigPath)
-    } catch { case e:Exception =>
-      throw new RuntimeException(s"Can't get sync job configuration on path '$syncJobConfigPath'. Following error occur: ${e.getStackTrace}")
-    }
   }
 
 }

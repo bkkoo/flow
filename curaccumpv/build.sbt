@@ -1,4 +1,14 @@
-name := """flow-curaccumpv"""
+name := """curaccumpv"""
+
+artifactName := {(sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+    "net.shantitree.flow." + artifact.name + "-" + module.revision + "_" + sv.binary  +"." + artifact.extension
+}
+
+lazy val curaccumpv = project in file (".") dependsOn(sys, base)
+
+lazy val sys = ProjectRef(file("../sys"), "sys")
+
+lazy val base = ProjectRef(file("../base"), "base")
 
 version := "0.3"
 
@@ -12,7 +22,7 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-nop" % "1.6.4"
   ,"org.scalatest" %% "scalatest" % "2.1.6" % "test"
-  ,"com.typesafe.akka" % "akka-actor_2.11" % "2.3.3"
+  ,"com.typesafe.akka" % "akka-actor_2.11" % "2.3.7"
   ,"com.google.inject" % "guice" % "4.0-beta5"
   ,"net.codingwell" %% "scala-guice" % "4.0.0-beta5"
   ,"com.orientechnologies" % "orient-commons" % "2.0-M1"

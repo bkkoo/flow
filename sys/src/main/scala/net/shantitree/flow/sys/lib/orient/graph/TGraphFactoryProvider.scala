@@ -1,16 +1,17 @@
 package net.shantitree.flow.sys.lib.orient.graph
 
 import com.tinkerpop.blueprints.impls.orient.OrientGraphFactory
-import net.shantitree.flow.sys.lib.module.GetConfig
+import com.typesafe.config.ConfigFactory
 
-trait TGraphFactoryProvider extends GetConfig {
+trait TGraphFactoryProvider {
 
-  protected val graphConfigPath: String
+  protected val dbConfigPath: String
+  protected lazy val config = ConfigFactory.load()
 
   protected lazy val graphConfig =  try {
-    config.getConfig(graphConfigPath)
+    config.getConfig(dbConfigPath)
   } catch { case e:Exception =>
-    throw new RuntimeException(s"Can't get graph configuration on path '$graphConfigPath'. Following error occur: ${e.getStackTrace}")
+    throw new RuntimeException(s"Can't get graph configuration on path '$dbConfigPath'. Following error occur: ${e.getStackTrace}")
   }
 
   protected lazy val url = graphConfig.getString("url")

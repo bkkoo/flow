@@ -2,7 +2,7 @@ package net.shantitree.flow.dbsync.model
 
 import net.shantitree.flow.dbsync.job.SyncJobConfig
 import net.shantitree.flow.dbsync.session.JobRunnerRef
-import net.shantitree.flow.sys.graph.GraphSession
+import net.shantitree.flow.sys.GraphSession
 import org.joda.time.DateTime
 
 

@@ -1,4 +1,8 @@
-name := """flow-slick"""
+name := """slick"""
+
+artifactName := {(sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+    "net.shantitree.flow." + artifact.name + "-" + module.revision + "_" + sv.binary  +"." + artifact.extension
+}
 
 version := "0.5"
 
@@ -29,3 +33,4 @@ javaOptions += "-Xmx2G"
 parallelExecution := true
 
 
+lazy val slick = project in file(".")

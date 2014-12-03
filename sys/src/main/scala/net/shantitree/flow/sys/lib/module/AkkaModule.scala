@@ -2,13 +2,16 @@ package net.shantitree.flow.sys.lib.module
 
 import akka.actor.ActorSystem
 import com.google.inject.{AbstractModule, Inject, Injector, Provider}
-import com.typesafe.config.Config
+import com.typesafe.config.ConfigFactory
 import net.codingwell.scalaguice.ScalaModule
 import net.shantitree.flow.sys.lib.guice.Gak
 import net.shantitree.flow.sys.lib.module.AkkaModule.ActorSystemProvider
 
 object AkkaModule {
-  class ActorSystemProvider @Inject() (val config: Config, val injector: Injector) extends Provider[ActorSystem] {
+
+  lazy val config = ConfigFactory.load()
+
+  class ActorSystemProvider @Inject() (val injector: Injector) extends Provider[ActorSystem] {
     override def get() = {
       val system = ActorSystem("flow", config)
       Gak(system).initialize(injector)

@@ -6,6 +6,11 @@ import net.shantitree.flow.dbsync.job.JobRunner
 import net.shantitree.flow.dbsync.model.SyncLog
 import net.shantitree.flow.dbsync.msg.job._
 import net.shantitree.flow.dbsync.model.SyncLogUtil._
+import net.shantitree.flow.sys.lib.module.NamedActor
+
+object SyncNewMember extends NamedActor {
+  val actorName = "SyncNewMember"
+}
 
 class SyncNewMember
   extends JobRunner(NewMember) {

@@ -1,4 +1,8 @@
-name := """flow-base"""
+name := """dbsync"""
+
+artifactName := {(sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+    "net.shantitree.flow." + artifact.name + "-" + module.revision + "_" + sv.binary  +"." + artifact.extension
+}
 
 version := "0.5"
 
@@ -12,8 +16,8 @@ resolvers ++= Seq(
 libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-nop" % "1.6.4"
   ,"org.scalatest" %% "scalatest" % "2.1.6" % "test"
-  ,"com.typesafe.akka" % "akka-actor_2.11" % "2.3.3"
-  ,"com.typesafe.akka" % "akka-agent_2.11" % "2.3.3"
+  ,"com.typesafe.akka" % "akka-actor_2.11" % "2.3.7"
+  ,"com.typesafe.akka" % "akka-kernel_2.11" % "2.3.7"
   ,"com.google.inject" % "guice" % "4.0-beta5"
   ,"net.codingwell" %% "scala-guice" % "4.0.0-beta5"
   ,"com.orientechnologies" % "orient-commons" % "2.0-M1"
@@ -31,4 +35,10 @@ javaOptions += "-Xmx2G"
 
 parallelExecution := true
 
+
+lazy val dbsync = (project in file (".") ).dependsOn(sys, slick)
+
+lazy val sys = ProjectRef(file ("../sys"), "sys")
+
+lazy val slick = ProjectRef(file ("../slick"), "slick")
 

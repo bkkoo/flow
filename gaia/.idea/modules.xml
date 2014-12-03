@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base.iml" filepath="$PROJECT_DIR$/.idea/modules/base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/base-build.iml" filepath="$PROJECT_DIR$/.idea/modules/base-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbsync.iml" filepath="$PROJECT_DIR$/.idea/modules/dbsync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbsync-build.iml" filepath="$PROJECT_DIR$/.idea/modules/dbsync-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-base.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-base-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-base-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-dbsync.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-dbsync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-dbsync-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-dbsync-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-gaia.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-gaia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-gaia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-gaia-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-slick.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-slick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-slick-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-slick-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-sys.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-sys-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-sys-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowBase.iml" filepath="$PROJECT_DIR$/.idea/modules/flowBase.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowBase-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flowBase-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowDbSync.iml" filepath="$PROJECT_DIR$/.idea/modules/flowDbSync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowDbSync-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flowDbSync-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowGaia.iml" filepath="$PROJECT_DIR$/.idea/modules/flowGaia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowGaia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flowGaia-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowSlick.iml" filepath="$PROJECT_DIR$/.idea/modules/flowSlick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowSlick-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flowSlick-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowSys.iml" filepath="$PROJECT_DIR$/.idea/modules/flowSys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flowSys-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flowSys-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia-model.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia-model.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia-model-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia-model-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaiaModel.iml" filepath="$PROJECT_DIR$/.idea/modules/gaiaModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaiaModel-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gaiaModel-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/slick.iml" filepath="$PROJECT_DIR$/.idea/modules/slick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/slick-build.iml" filepath="$PROJECT_DIR$/.idea/modules/slick-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sys.iml" filepath="$PROJECT_DIR$/.idea/modules/sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/sys-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sys-build.iml" />
+    </modules>
+  </component>
+</project>

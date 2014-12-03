@@ -1,5 +1,9 @@
 name := """gaia-model"""
 
+artifactName := {(sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
+    "net.shantitree.flow." + artifact.name + "-" + module.revision + "_" + sv.binary  +"." + artifact.extension
+}
+
 version := "1.0"
 
 scalaVersion := "2.11.4"
@@ -16,3 +20,5 @@ libraryDependencies ++= Seq(
 )
 
 parallelExecution := true
+
+lazy val gaiaModel = project in file(".")

@@ -1,6 +1,5 @@
 package net.shantitree.flow.gaia.sync.jobrunner
 
-import com.google.inject.Inject
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.saleorder.sys.SaleOrderDML
 import net.shantitree.flow.gaia.sync.job.NewSaleOrder
@@ -8,11 +7,14 @@ import net.shantitree.flow.dbsync.job.JobRunner
 import net.shantitree.flow.dbsync.model.SyncLog
 import net.shantitree.flow.dbsync.msg.job._
 import net.shantitree.flow.dbsync.model.SyncLogUtil._
-import net.shantitree.flow.sys.lib.{DataChangeMsg, DataChangeTopic, DataChangeMethod, DataChangeEventBus}
-import net.shantitree.flow.sys.DataChangeMsg
+import net.shantitree.flow.sys.lib.module.NamedActor
+import net.shantitree.flow.sys.lib.{DataChangeTopic, DataChangeMethod, DataChangeEventBus}
 
-class SyncNewSaleOrder @Inject() (val eventBus: DataChangeEventBus)
-  extends JobRunner(NewSaleOrder) {
+object SyncNewSaleOrder extends NamedActor {
+  val actorName = "SyncNewSaleOrder"
+}
+
+class SyncNewSaleOrder extends JobRunner(NewSaleOrder) {
 
   lazy val myBeginSync = rcvBeginSyncWithWaitForRunner("SyncNewMember")
   lazy val dataChangeTopic = DataChangeTopic("SaleOrder", DataChangeMethod.Create)
@@ -20,8 +22,10 @@ class SyncNewSaleOrder @Inject() (val eventBus: DataChangeEventBus)
   def periodical:Receive = partialRcv {
     case UpdateFinished(result, slog) =>
       updateFinished(result, slog)
+      /*
       val msg = DataChangeMsg(dataChangeTopic, result)
       eventBus.publish(msg)
+      */
 
   } orElse myBeginSync
 

@@ -4,8 +4,8 @@ import com.tinkerpop.blueprints.Vertex
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.base.biz.constant.EdgeLabelConst
+import net.shantitree.flow.sys.GraphSession
 import net.shantitree.flow.sys.lib.orient.graph.VertexHelper._
-import net.shantitree.flow.sys.graph.GraphSession
 
 object BzNetBL {
   val E = EdgeLabelConst

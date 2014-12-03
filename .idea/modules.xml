@@ -3,7 +3,15 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow.iml" filepath="$PROJECT_DIR$/.idea/modules/flow.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-base.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-base.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-base-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-base-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-curaccumpv.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-curaccumpv.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-curaccumpv-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-curaccumpv-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-gaia.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-gaia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-gaia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-gaia-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-sys.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-sys.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/flow-sys-build.iml" filepath="$PROJECT_DIR$/.idea/modules/flow-sys-build.iml" />
     </modules>
   </component>
 </project>
