@@ -8,11 +8,12 @@ import net.shantitree.flow.base.saleorder.sys.SaleOrderBL
 import net.shantitree.flow.curaccumpv.sys.msg._
 import net.shantitree.flow.curaccumpv.sys.{CurAccumPVDML, CurAccumPVProc, LoggingUtil}
 import net.shantitree.flow.sys.biz.ComPeriodUtil
-import net.shantitree.flow.sys.event.BusinessEventTopic
+import net.shantitree.flow.sys.event.BusinessEventPayload.RidOfNewSales
 import net.shantitree.flow.sys.lib.eventbus.SimpleBus.{Publish, Unsubscribe, Subscribe}
 import net.shantitree.flow.sys.module.NamedActor
 import net.shantitree.flow.sys.lib.orient.graph.TGraphSession
-import net.shantitree.flow.sys.lib.{DataChangeEventBus, DataChangeMethod, DataChangeMsg, DataChangeTopic}
+import net.shantitree.flow.sys.event.BusinessEventTopic.{NewSales, UpdateCurAccumPV}
+import net.shantitree.flow.sys.lib.orient.graph.GraphHelper._
 
 object UpdatingController extends NamedActor {
 
@@ -45,11 +46,11 @@ object UpdatingController extends NamedActor {
           CurAccumPVProc.updateAccumPV(comPeriod, receivers, log, regenerateAllFlag)
         }
         if (result.nonEmpty) {
-          businessEvent ! Publish(BusinessEventTopic.UpdateCurAccumPV, result)
+          businessEvent ! Publish(UpdateCurAccumPV, result)
         }
 
       case DeleteAll(comPeriod) =>
-        val result = tx { implicit g =>
+        tx { implicit g =>
           CurAccumPVDML.deleteAllOnComPeriod(comPeriod)
         }
     }
@@ -73,17 +74,20 @@ class UpdatingController @Inject() (@Named("BusinessEventActorPath") val busines
   def receive = {
 
     case StartMon =>
-      businessEvent ! Subscribe(BusinessEventTopic.NewSales, self)
+      businessEvent ! Subscribe(NewSales, self)
 
     case StopMon =>
-      businessEvent ! Unsubscribe(self, BusinessEventTopic.NewSales)
+      businessEvent ! Unsubscribe(self, NewSales)
 
-    case NewSales(codes) =>
-
-      log.info(codes.mkString(","))
+    case RidOfNewSales(rids) =>
 
       val groupOfSaleOrders = tx { implicit g =>
-        SaleOrderBL.getSaleOrders(codes).toVector.groupBy(_.com_period)
+        rids.map { rid =>
+          g.getV(SaleOrderHeaderVW)(rid)
+        }.filter(_.nonEmpty)
+        .map(_.get)
+        .toVector
+        .groupBy(_.com_period)
       }
 
       for { (comPeriod, saleOrders) <- groupOfSaleOrders } {
