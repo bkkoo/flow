@@ -5,7 +5,7 @@ import com.google.inject.Inject
 import com.google.inject.name.Named
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import com.typesafe.config.Config
-import net.shantitree.flow.dbsync.AppController
+import net.shantitree.flow.dbsync.DbSyncController$
 import net.shantitree.flow.sys.GraphSession
 import net.shantitree.flow.sys.lib.model.TModel
 import net.shantitree.flow.slick.qry.BaseQry

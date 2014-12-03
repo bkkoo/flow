@@ -85,5 +85,16 @@
     <orderEntry type="library" name="SBT: org.slf4j:slf4j-nop:1.6.4" level="project" />
     <orderEntry type="library" name="SBT: org.xerial.snappy:snappy-java:1.1.0.1" level="project" />
     <orderEntry type="library" name="SBT: stax:stax-api:1.0.1" level="project" />
+    <orderEntry type="library" name="SBT: com.google.protobuf:protobuf-java:2.5.0" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.akka:akka-remote_2.11:2.3.7" level="project" />
+    <orderEntry type="library" name="SBT: io.netty:netty:3.8.0.Final" level="project" />
+    <orderEntry type="library" name="SBT: org.uncommons.maths:uncommons-maths:1.2.2a" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.akka:akka-kernel_2.11:2.3.7" level="project" />
+    <orderEntry type="module" module-name="dbsync" exported="" />
+    <orderEntry type="module" module-name="gaia" exported="" />
+    <orderEntry type="module" module-name="slick" exported="" />
+    <orderEntry type="library" name="SBT: com.typesafe.slick:slick-extensions_2.11:2.1.0" level="project" />
+    <orderEntry type="library" name="SBT: com.typesafe.slick:slick_2.11:2.1.0" level="project" />
+    <orderEntry type="library" name="SBT: net.sourceforge.jtds:jtds:1.3.1" level="project" />
   </component>
 </module>

@@ -13,13 +13,19 @@ resolvers ++= Seq(
   "OSS Sonatype Releases" at "https://oss.sonatype.org/content/repositories/releases/"
 )
 
-lazy val mela = project in file(".") dependsOn(sys, base, curaccumpv)
+lazy val mela = project in file(".") dependsOn(sys, base, curaccumpv, dbsync, slick, gaia)
 
 lazy val sys = ProjectRef(file("../sys"), "sys")
 
 lazy val base = ProjectRef(file("../base"), "base")
 
 lazy val curaccumpv = ProjectRef(file("../curaccumpv"), "curaccumpv")
+
+lazy val dbsync = ProjectRef(file("../dbsync"), "dbsync")
+
+lazy val slick = ProjectRef(file("../slick"), "slick")
+
+lazy val gaia = ProjectRef(file("../gaia"), "gaia")
 
 lazy val orientId = "com.orientechnologies"
 
@@ -35,6 +41,8 @@ libraryDependencies ++= Seq(
   ,"org.scalatest" %% "scalatest" % "2.1.6" % "test"
   ,"org.scala-lang" % "scala-reflect" % "2.11.1"
   ,akkaId % "akka-actor_2.11" % akkaVer
+  ,akkaId % "akka-remote_2.11" % akkaVer
+  ,akkaId % "akka-kernel_2.11" % akkaVer
   ,"com.google.inject" % "guice" % "4.0-beta5"
   ,"net.codingwell" %% "scala-guice" % "4.0.0-beta5"
   ,orientId % "orient-commons" % "2.0-M1"

@@ -6,8 +6,16 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/base-build.iml" filepath="$PROJECT_DIR$/.idea/modules/base-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/curaccumpv.iml" filepath="$PROJECT_DIR$/.idea/modules/curaccumpv.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/curaccumpv-build.iml" filepath="$PROJECT_DIR$/.idea/modules/curaccumpv-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbsync.iml" filepath="$PROJECT_DIR$/.idea/modules/dbsync.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/dbsync-build.iml" filepath="$PROJECT_DIR$/.idea/modules/dbsync-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaia-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gaia-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaiaModel.iml" filepath="$PROJECT_DIR$/.idea/modules/gaiaModel.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/gaiaModel-build.iml" filepath="$PROJECT_DIR$/.idea/modules/gaiaModel-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mela.iml" filepath="$PROJECT_DIR$/.idea/modules/mela.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/mela-build.iml" filepath="$PROJECT_DIR$/.idea/modules/mela-build.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/slick.iml" filepath="$PROJECT_DIR$/.idea/modules/slick.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/slick-build.iml" filepath="$PROJECT_DIR$/.idea/modules/slick-build.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sys.iml" filepath="$PROJECT_DIR$/.idea/modules/sys.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/sys-build.iml" filepath="$PROJECT_DIR$/.idea/modules/sys-build.iml" />
     </modules>

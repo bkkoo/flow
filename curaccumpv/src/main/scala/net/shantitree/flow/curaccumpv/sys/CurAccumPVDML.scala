@@ -4,7 +4,7 @@ import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.bznet.sys.BzNetDML
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.sys.lib.DML
-import net.shantitree.flow.sys.lib.biz.PV
+import net.shantitree.flow.sys.biz.PV
 import net.shantitree.flow.base.biz.constant.EdgeLabelConst
 import net.shantitree.flow.curaccumpv.model.{CurAccumPVVW, CurAccumPVField, CurAccumPV}
 import net.shantitree.flow.sys.lib.orient.graph.GraphHelper._

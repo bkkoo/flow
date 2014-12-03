@@ -1,6 +1,6 @@
 package net.shantitree.flow.base.biz
 
-import net.shantitree.flow.sys.lib.biz.ComPeriodUtil
+import net.shantitree.flow.sys.biz.ComPeriodUtil
 import org.joda.time.DateTime
 
 object JapinComPeriodUtil extends ComPeriodUtil {

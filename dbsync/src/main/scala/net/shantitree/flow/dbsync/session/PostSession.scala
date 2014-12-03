@@ -2,10 +2,10 @@ package net.shantitree.flow.dbsync.session
 
 import akka.actor.Actor
 import com.google.inject.Inject
-import net.shantitree.flow.sys.lib.module.NamedActor
 import net.shantitree.flow.sys.lib.orient.graph.TGraphSession
 import net.shantitree.flow.dbsync.model.SyncLogUtil
 import net.shantitree.flow.dbsync.msg.job._
+import net.shantitree.flow.sys.module.NamedActor
 
 import scala.util.Try
 

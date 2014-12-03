@@ -3,7 +3,7 @@ package net.shantitree.flow.base.biz
 import com.tinkerpop.blueprints.impls.orient.OrientGraph
 import net.shantitree.flow.base.bznet.model.BzNodeVW
 import net.shantitree.flow.base.saleorder.model.SaleOrderHeaderVW
-import net.shantitree.flow.sys.lib.biz.PV
+import net.shantitree.flow.sys.biz.PV
 import net.shantitree.flow.sys.lib.orient.graph.TGraphSession
 
 import scala.annotation.tailrec

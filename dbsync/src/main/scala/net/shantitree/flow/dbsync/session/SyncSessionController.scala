@@ -4,8 +4,8 @@ import akka.actor.{ActorRef, ActorLogging, Actor}
 import com.typesafe.config.ConfigFactory
 import net.shantitree.flow.dbsync.msg.job._
 import net.shantitree.flow.sys.lib.guice.Gak
-import net.shantitree.flow.sys.lib.module.NamedActor
 import net.shantitree.flow.sys.lib.msg.Start
+import net.shantitree.flow.sys.module.NamedActor
 import org.joda.time.{Duration, DateTime}
 import scala.collection.JavaConverters._
 
