@@ -22,7 +22,7 @@ object NewSaleOrder
 
   def createUpdater(datum: List[SaleOrder]) = Updater { implicit g =>
       datum.map { saleOrder =>
-        SaleOrderDML.addNew(saleOrder)._1.code
+        SaleOrderDML.addNew(saleOrder)._1.rid
       }
   }
 

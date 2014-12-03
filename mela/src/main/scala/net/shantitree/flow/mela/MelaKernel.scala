@@ -5,7 +5,6 @@ import akka.kernel.Bootable
 import com.google.inject.Guice
 import net.codingwell.scalaguice.InjectorExtensions._
 import net.shantitree.flow.curaccumpv.{CurAccumPVController, CurAccumPVModule}
-import net.shantitree.flow.mela.MelaModule
 import net.shantitree.flow.sys.lib.actor.GuiceAkkaKernelUtil
 import net.shantitree.flow.sys.module.AkkaModule
 
